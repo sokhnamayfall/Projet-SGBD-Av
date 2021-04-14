@@ -18,6 +18,8 @@ t.Images = True
 if not path.exists("communiqués-covid19SN"):
   os.mkdir("communiqués-covid19SN")
   os.chdir("communiqués-covid19SN")
+else:
+  os.chdir("communiqués-covid19SN")
   
 twint.run.Search(t)
 
