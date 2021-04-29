@@ -2,6 +2,12 @@
 # a file explorer in Tkinter
 
 # import all components
+import twint
+import pandas as pd
+import os
+import urllib.request
+import nest_asyncio
+from os import path
 # from the tkinter library
 from tkinter import *
 
@@ -36,24 +42,25 @@ def tweets_download() :
   data = data[['date', 'thumbnail']]
 
   # telechargement des communiqués
-  if not path.exists("communiqués-covid19SN"):
+  if not path.exists("communiqués"):
     os.mkdir("communiqués")
     os.chdir("communiqués")
   else:
-    os.chdir("communiqués-covid19SN")
+    os.chdir("communiqués")
 
   max = len(data)-1
 
   for i in range(0, max+1):
     urllib.request.urlretrieve(data['thumbnail'][i], str(max)+"."+data['date'][i]+".jpg")
     max-=1
-    if i==0:
+    print("Téléchargement en cours...")
+    if i==max:
           print("Téléchargement terminé!")
 
 # Function for opening the
 # file explorer window
 def browseFiles():
-	filename = filedialog.askopenfilename(initialdir = "/Users/Christian/Python/Projet-SGBD-Av/downloads",
+	filename = filedialog.askopenfilename(initialdir = "./communiqués-covid19SN",
 										title = "Select a File",
 										filetypes = (("Text files",
 														"*.txt*"),

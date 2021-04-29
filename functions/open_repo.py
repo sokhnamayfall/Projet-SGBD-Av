@@ -11,7 +11,7 @@ from tkinter import filedialog
 # Function for opening the
 # file explorer window
 def browseFiles():
-	filename = filedialog.askopenfilename(initialdir = "/Users/Christian/Python/Projet-SGBD-Av/downloads",
+	filename = filedialog.askopenfilename(initialdir = "./communiqués-covid19SN",
 										title = "Select a File",
 										filetypes = (("Text files",
 														"*.txt*"),
