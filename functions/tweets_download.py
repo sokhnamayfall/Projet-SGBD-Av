@@ -16,14 +16,14 @@ t.Images = True
 
 # Récupération des tweets
 if not path.exists("communiqués-covid19SN"):
-  os.mkdir("communiqués-covid19SN")
-  os.chdir("communiqués-covid19SN")
+    os.mkdir("communiqués-covid19SN")
+    os.chdir("communiqués-covid19SN")
 else:
-  os.chdir("communiqués-covid19SN")
-  
+    os.chdir("communiqués-covid19SN")
+
 twint.run.Search(t)
 
-#telechargement des images
+# telechargement des images
 data_OG = pd.read_csv('ImagesCommunique.csv')
 data = data_OG.copy()
 
@@ -31,15 +31,16 @@ data = data[['date', 'thumbnail']]
 
 # telechargement des communiqués
 if not path.exists("communiqués-covid19SN"):
-  os.mkdir("communiqués")
-  os.chdir("communiqués")
+    os.mkdir("communiqués")
+    os.chdir("communiqués")
 else:
-  os.chdir("communiqués-covid19SN")
+    os.chdir("communiqués-covid19SN")
 
 max = len(data)-1
 
 for i in range(0, max+1):
-  urllib.request.urlretrieve(data['thumbnail'][i], str(max)+"."+data['date'][i]+".jpg")
-  max-=1
-  if i==0:
-    print("Téléchargement terminé!")
+    urllib.request.urlretrieve(
+        data['thumbnail'][i], str(max)+"."+data['date'][i]+".jpg")
+    max -= 1
+    if i == 0:
+        print("Téléchargement terminé!")
