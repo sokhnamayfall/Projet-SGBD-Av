@@ -1,0 +1,7 @@
+lien: https://www.db4free.net/phpMyAdmin
+
+Nom base de donnees: projetcovid19
+User: dic2infotr
+MotDePasse : passer1234
+
+serveur :db4free.net
