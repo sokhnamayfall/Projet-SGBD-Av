@@ -74,32 +74,30 @@ def browseFiles():
 
 # Create the root window
 window = Tk()
-
 # Set window title
 window.title('File Explorer')
-
 # Set window size
 window.geometry("500x500")
-
 # Set window background color
 window.config(background="white")
-
 # Create a File Explorer label
-label_file_explorer = Label(window,
+main_frame = Frame(window)
+main_frame.pack()
+second_frame = Frame(window, bg="red")
+second_frame.pack()
+second_frame.tkraise()
+label_file_explorer = Label(main_frame,
+
                             text="Covid-19 Progression Modeler",
                             width=100, height=4,
                             fg="blue")
-
-
-button_explore = Button(window,
+button_explore = Button(main_frame,
                         text="Browse Files",
                         command=browseFiles)
-
-button_download = Button(window,
+button_download = Button(main_frame,
                          text="Download from Twitter",
                          command=tweets_download)
-
-button_exit = Button(window,
+button_exit = Button(main_frame,
                      text="Exit",
                      command=exit)
 
