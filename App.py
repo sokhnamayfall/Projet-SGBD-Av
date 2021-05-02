@@ -84,7 +84,6 @@ window.config(background="white")
 main_frame = Frame(window)
 main_frame.pack()
 second_frame = Frame(window, bg="red")
-second_frame.pack()
 second_frame.tkraise()
 label_file_explorer = Label(main_frame,
 
