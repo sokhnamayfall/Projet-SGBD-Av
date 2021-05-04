@@ -72,13 +72,22 @@ def browseFiles():
     label_file_explorer.configure(text="File Opened: "+filename)
 
 
+def show_data_loader():
+    main_frame.grid_forget()
+    second_frame.grid(column=1, row=1)
+
+
+def go_back():
+    main_frame.grid(column=1, row=1)
+    second_frame.grid_forget()
+
+
 # Create the root window
 window = Tk()
 window.title('File Explorer')
 window.geometry("500x500")
-window.config(background="white")
-
 main_frame = Frame(window)
+main_frame.configure(background="white")
 label_file_explorer = Label(main_frame,
                             text="Covid-19 Progression Modeler",
                             width=100, height=4,
@@ -89,6 +98,8 @@ button_explore = Button(main_frame,
 button_download = Button(main_frame,
                          text="Download from Twitter",
                          command=tweets_download)
+button_data_loader = Button(
+    main_frame, text="data loader", command=show_data_loader)
 button_exit = Button(main_frame,
                      text="Exit",
                      command=exit)
@@ -96,7 +107,13 @@ button_exit = Button(main_frame,
 label_file_explorer.grid(column=1, row=1)
 button_explore.grid(column=1, row=2)
 button_download.grid(column=1, row=3)
-button_exit.grid(column=1, row=4)
+button_data_loader.grid(column=1, row=4)
+button_exit.grid(column=1, row=5)
 
-main_frame.pack()
+
+second_frame = Frame(window)
+
+button = Button(second_frame, text="click me")
+button.grid(column=1, row=1)
+main_frame.grid(column=1, row=1)
 window.mainloop()
