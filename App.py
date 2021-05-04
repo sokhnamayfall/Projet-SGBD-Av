@@ -54,12 +54,12 @@ def tweets_download() :
 
   max = len(data)-1
 
+  print("Téléchargement : ")
   for i in range(0, max+1):
-    urllib.request.urlretrieve(data['thumbnail'][i], data['date'][i]+".jpg")
-    max-=1
-    print("Téléchargement en cours...")
+    urllib.request.urlretrieve(data['thumbnail'][i], str(i)+'_'+data['date'][i]+".jpg")
+    print(".", end=" ")
     if i==max:
-          print("Téléchargement terminé!")
+      print("Téléchargement terminé!")
 
 # Function for opening the
 # file explorer window
