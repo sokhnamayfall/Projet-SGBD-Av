@@ -16,14 +16,14 @@ t.Images = True
 
 # Récupération des tweets
 if not path.exists("communiqués-covid19SN"):
-  os.mkdir("communiqués-covid19SN")
-  os.chdir("communiqués-covid19SN")
+    os.mkdir("communiqués-covid19SN")
+    os.chdir("communiqués-covid19SN")
 else:
-  os.chdir("communiqués-covid19SN")
-  
+    os.chdir("communiqués-covid19SN")
+
 twint.run.Search(t)
 
-#telechargement des images
+# telechargement des images
 data_OG = pd.read_csv('ImagesCommunique.csv')
 data = data_OG.copy()
 

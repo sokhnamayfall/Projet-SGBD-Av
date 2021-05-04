@@ -14,7 +14,7 @@ if connection.is_connected():
 cursor = connection.cursor()
 
 # loading json file as a dictionary
-f = open('test.json',)
+f = open('donnees.json',)
 data = json.load(f)
 j=0
 liste = []
@@ -33,18 +33,9 @@ while j<3:
   connection.commit()
   print("insertion ",j, "reussie")
   liste = list(liste) # transform the tuple again to a list
-  del liste[:] # delete all elements 
+  del liste[:] # delete all elements in the list
   j = int(j)
   j +=1
-
-
-""" request = "select * from fichier"
-cursor.execute(request)
-
-commune = cursor.fetchall()
-
-for c in commune:
-  print(c) """
 
 connection.close()
 cursor.close()
