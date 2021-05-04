@@ -74,19 +74,12 @@ def browseFiles():
 
 # Create the root window
 window = Tk()
-# Set window title
 window.title('File Explorer')
-# Set window size
 window.geometry("500x500")
-# Set window background color
 window.config(background="white")
-# Create a File Explorer label
-main_frame = Frame(window)
-main_frame.pack()
-second_frame = Frame(window, bg="red")
-second_frame.tkraise()
-label_file_explorer = Label(main_frame,
 
+main_frame = Frame(window)
+label_file_explorer = Label(main_frame,
                             text="Covid-19 Progression Modeler",
                             width=100, height=4,
                             fg="blue")
@@ -100,17 +93,10 @@ button_exit = Button(main_frame,
                      text="Exit",
                      command=exit)
 
-# Grid method is chosen for placing
-# the widgets at respective positions
-# in a table like structure by
-# specifying rows and columns
 label_file_explorer.grid(column=1, row=1)
-
 button_explore.grid(column=1, row=2)
-
 button_download.grid(column=1, row=3)
-
 button_exit.grid(column=1, row=4)
 
-# Let the window wait for any events
+main_frame.pack()
 window.mainloop()
