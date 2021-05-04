@@ -30,16 +30,17 @@ data = data_OG.copy()
 data = data[['date', 'thumbnail']]
 
 # telechargement des communiqués
-if not path.exists("communiqués-covid19SN"):
+if not path.exists("communiqués"):
   os.mkdir("communiqués")
   os.chdir("communiqués")
 else:
-  os.chdir("communiqués-covid19SN")
+  os.chdir("communiqués")
 
 max = len(data)-1
 
+print("Téléchargement : ")
 for i in range(0, max+1):
-  urllib.request.urlretrieve(data['thumbnail'][i], str(max)+"."+data['date'][i]+".jpg")
-  max-=1
+  urllib.request.urlretrieve(data['thumbnail'][i], str(i)+'_'+data['date'][i]+".jpg")
+  print(".", end=" ")
   if i==0:
     print("Téléchargement terminé!")

@@ -51,7 +51,7 @@ def tweets_download() :
   max = len(data)-1
 
   for i in range(0, max+1):
-    urllib.request.urlretrieve(data['thumbnail'][i], str(max)+"."+data['date'][i]+".jpg")
+    urllib.request.urlretrieve(data['thumbnail'][i], data['date'][i]+".jpg")
     max-=1
     print("Téléchargement en cours...")
     if i==max:
