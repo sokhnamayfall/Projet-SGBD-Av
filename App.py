@@ -10,7 +10,7 @@ import os
 import urllib.request
 import nest_asyncio
 from os import path
-
+from functions.dataloader import *
 # import filedialog module
 from tkinter import filedialog
 
@@ -110,10 +110,18 @@ button_download.grid(column=1, row=3)
 button_data_loader.grid(column=1, row=4)
 button_exit.grid(column=1, row=5)
 
-
+# dataLoader frame
 second_frame = Frame(window)
+lbox = Listbox(second_frame)
 
-button = Button(second_frame, text="click me")
+communiques = list_files("./communiqués-covid19SN/communiqués")
+for f in communiques:
+    lbox.insert(communiques.index(f), str(f))
+lbox.grid(column=2, row=1, columnspan=4)
+
+
+button = Button(second_frame, text="click me", command=go_back)
+
 button.grid(column=1, row=1)
 main_frame.grid(column=1, row=1)
 window.mainloop()

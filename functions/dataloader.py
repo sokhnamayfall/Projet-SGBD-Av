@@ -1,3 +1,5 @@
+from os import listdir
+from os.path import isfile, join
 import csv
 from pprint import pp
 
@@ -18,3 +20,8 @@ def csv2list(csv_file):
             index += 1
         print(f" lines read : {index}  \n")
     pp(row_dicts)
+
+
+def list_files(path):
+    onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
+    return onlyfiles
