@@ -219,7 +219,7 @@ INSERT INTO `departement` (`id`, `nom_localite`, `region_id`) VALUES
 
 CREATE TABLE `fichier` (
   `id` int(11) NOT NULL,
-  `nbre_nouv_cas` int(11) NOT NULL,
+  `cas_positif` int(11) NOT NULL,
   `nbre_cas_contact` int(11) NOT NULL,
   `nbre_cas_communautaires` int(11) NOT NULL,
   `nbre_gueris` int(11) NOT NULL,
@@ -228,8 +228,7 @@ CREATE TABLE `fichier` (
   `nbre_cas_importes` int(11) NOT NULL,
   `nbre_cas_graves` int(11) NOT NULL,
   `nom_fichier_source` varchar(70) NOT NULL,
-  `date_heure_extraction` date NOT NULL,
-  `date` date NOT NULL
+  `date_communique` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -242,7 +241,7 @@ CREATE TABLE `casCommunes` (
   `id` int(11) NOT NULL,
   `nbre_nouv_cas` int(11) NOT NULL,
   `nom_fichier_source` varchar(70) NOT NULL,
-  `date_heure_extraction` date NOT NULL,
+  `date_communique` date NOT NULL,
   `date` date NOT NULL,
   `commune_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -257,8 +256,7 @@ CREATE TABLE `casDepartements` (
   `id` int(11) NOT NULL,
   `nbre_nouv_cas` int(11) NOT NULL,
   `nom_fichier_source` varchar(70) NOT NULL,
-  `date_heure_extraction` date NOT NULL,
-  `date` date NOT NULL,
+  `date_communique` date NOT NULL,
   `departement_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -272,8 +270,7 @@ CREATE TABLE `casRegions` (
   `id` int(11) NOT NULL,
   `nbre_nouv_cas` int(11) NOT NULL,
   `nom_fichier_source` varchar(70) NOT NULL,
-  `date_heure_extraction` date NOT NULL,
-  `date` date NOT NULL,
+  `date_communique` date NOT NULL,
   `region_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
