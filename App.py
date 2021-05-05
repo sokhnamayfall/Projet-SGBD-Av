@@ -60,28 +60,10 @@ def tweets_download() :
     print(".", end=" ")
     if i==max:
       print("Téléchargement terminé!")
-
-# Function for opening the
-# file explorer window
-def browseFiles():
-	filename = filedialog.askopenfilename(initialdir = "./communiqués-covid19SN",
-										title = "Select a File",
-										filetypes = (("Text files",
-														"*.txt*"),
-													("all files",
-														"*.*")))
-	
-	# Change label contents
-	label_file_explorer.configure(text="File Opened: "+filename)
-	
 	
 																								
 # Create the root window
 window = Tk()
-
-def tweets_download() : 
-
-    print("Téléchargement terminé!")
 
 def Browser():
   # zone de définition de fonctions
