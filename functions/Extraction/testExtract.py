@@ -7,7 +7,7 @@ from os import listdir
 from os.path import isfile, join
 
 def extraction():
-    nomRepertoire="functions/Extraction/communiques/"
+    nomRepertoire="functions/Extraction/communiqués/"
     i=0
     extraire=DataAcquisition()
     for f in listdir(nomRepertoire):

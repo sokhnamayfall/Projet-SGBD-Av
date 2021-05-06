@@ -5,9 +5,9 @@ def charger_donnees():
 
   connection = mysql.connector.connect(
   host="127.0.0.1",
-  user="root",
-  password="AmoulcodE1004",
-  database="projetcovid19",
+  user="dic2infotr",
+  password="passer1234",
+  database="covid19",
   port=3306
   )
   if connection.is_connected():
