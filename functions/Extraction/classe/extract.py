@@ -1,4 +1,6 @@
 from collections import OrderedDict
+
+
 month={"JANVIER":"1","FÉVRIER":"2","MARS":"3","AVRIL":"4","MAI":"5","JUIN":"6","JUILLET":"7","AOUT":"8","SEPTEMBRE":"9","OCTOBRE":"10","NOVEMBRE":"11","DECEMBRE":"12"}
 class DataAcquisition():
     def __init__(self):
@@ -56,14 +58,14 @@ class DataAcquisition():
             if tab_texte[i]=="tests" or tab_texte[i]=="test":
                 #La nombre vient apre le premier mot "Sur"
                 if tab_texte[i+1]=="réalisés," or tab_texte[i+1]=="réalisé,":
-                      
+                    
                     if (tab_texte[i-1].lower()=="aucun"):
                         tab_texte[i-1]="0"
                     self.texte=" ".join(tab_texte[i:])
                     if (tab_texte[i-1].isdigit()):
                         return int(tab_texte[i-1])
                     return None
-                   
+                
     def get_nombre_positifs(self):
         tab_texte=self.texte.split()
         for i in range(len(tab_texte)):
@@ -92,7 +94,7 @@ class DataAcquisition():
         tab_texte=self.texte.split()
         for i in range(len(tab_texte)):
             if tab_texte[i].lower()=="cas":
-                 if tab_texte[i+1]=="issus" or tab_texte[i+1]=="issu":  
+                if tab_texte[i+1]=="issus" or tab_texte[i+1]=="issu":  
                 #La nombre vient apre le premier mot "Sur"
                     if (tab_texte[i-1].lower()=="aucun"):
                         tab_texte[i-1]="0"
@@ -194,17 +196,17 @@ class DataAcquisition():
 # dA=DataAcquisition() 
 
         
-         
+            
 
 
-# dA.update("dsjqsd.jpeg",text1)
-# print(text1)
-# print(dA.date_communique)
-# # print(dA.texte)
-# print(dA.get_nombre_tests())
-# print(dA.get_nombre_positifs())
-# #print(dA.get_nombre_vaccines(text1))
-# print(dA.get_nombre_gueris(  ))
-# print(dA.get_nombre_cas_contacts())
-# print(dA.get_nombre_cas_importes())
-#print(dA.date_communique)
+    # dA.update("dsjqsd.jpeg",text1)
+    # print(text1)
+    # print(dA.date_communique)
+    # # print(dA.texte)
+    # print(dA.get_nombre_tests())
+    # print(dA.get_nombre_positifs())
+    # #print(dA.get_nombre_vaccines(text1))
+    # print(dA.get_nombre_gueris(  ))
+    # print(dA.get_nombre_cas_contacts())
+    # print(dA.get_nombre_cas_importes())
+    #print(dA.date_communique)
