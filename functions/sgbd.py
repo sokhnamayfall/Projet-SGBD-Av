@@ -1,6 +1,6 @@
 import mysql.connector
 import json
-
+# mysqldump --routines -u root -p projetcovid19 > bdd.sql
 def charger_donnees():
 
   connection = mysql.connector.connect(
