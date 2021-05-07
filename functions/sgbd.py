@@ -7,7 +7,7 @@ def charger_donnees():
   host="127.0.0.1",
   user="dic2infotr",
   password="passer1234",
-  database="covid19",
+  database="projetcovid19",
   port=3306
   )
   if connection.is_connected():
